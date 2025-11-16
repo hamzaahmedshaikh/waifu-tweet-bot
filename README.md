@@ -1,67 +1,137 @@
-# Welcome to your Lovable project
+# 🤖 Anime Twitter Bot
 
-## Project info
+Automated bot that posts anime images with AI-generated captions to Twitter/X 9 times daily.
 
-**URL**: [Link Here](https://hamzaahmedshaikh.github.io/waifu-tweet-bot/)
+## 📋 Prerequisites
 
-## How can I edit this code?
+- Node.js (v16 or higher)
+- Twitter/X account
+- Chrome browser (for Puppeteer)
 
-There are several ways of editing your application.
+## 🚀 Installation
 
-**Use your preferred IDE**
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+2. **Export Twitter cookies:**
+   
+   a. Install a browser extension like "EditThisCookie" or "Cookie-Editor"
+   
+   b. Login to Twitter/X in your browser
+   
+   c. Export cookies and save ONLY these required cookies to `cookies.json`:
+      - `auth_token`
+      - `ct0`
+   
+   d. Format should match `cookies.json` template provided
+   
+   **Important:** Keep your `cookies.json` file secure and never share it!
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+3. **Verify cookies.json format:**
+   ```json
+   [
+     {
+       "name": "auth_token",
+       "value": "your_actual_token_value",
+       "domain": ".twitter.com",
+       "path": "/",
+       "httpOnly": true,
+       "secure": true
+     },
+     {
+       "name": "ct0",
+       "value": "your_actual_ct0_value",
+       "domain": ".twitter.com",
+       "path": "/",
+       "httpOnly": false,
+       "secure": true
+     }
+   ]
+   ```
 
-Follow these steps:
+## ▶️ Usage
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+**Start the bot:**
+```bash
+node bot.js
 ```
 
-**Edit a file directly in GitHub**
+The bot will:
+- Post immediately when started
+- Schedule 9 posts per day at Florida timezone intervals
+- Automatically download random anime images
+- Generate creative captions
+- Post to Twitter using your cookies
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## ⏰ Posting Schedule (Florida Timezone)
 
-**Use GitHub Codespaces**
+- 8:00 AM
+- 10:30 AM
+- 1:00 PM
+- 3:30 PM
+- 6:00 PM
+- 7:30 PM
+- 8:00 PM
+- 8:30 PM
+- 10:00 PM
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📁 Project Structure
 
-## What technologies are used for this project?
+```
+anime-twitter-bot/
+├── bot.js           # Main bot logic
+├── tweet.js         # Puppeteer Twitter automation
+├── package.json     # Dependencies
+├── cookies.json     # Your Twitter session cookies
+├── image.png        # Downloaded anime image (auto-generated)
+└── README.md        # This file
+```
 
-This project is built with:
+## 🔧 Configuration
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+**To change posting frequency:**
+Edit `FLORIDA_POST_TIMES` array in `bot.js` using cron syntax.
 
-## How can I deploy this project?
+**To customize captions:**
+Modify the `captions` array in `generateCaption()` function.
 
-Simply open [Lovable](https://lovable.dev/projects/a0a42776-63d2-43e6-a5b0-5863767e7f44) and click on Share -> Publish.
+**For headless mode (production):**
+In `tweet.js`, change `headless: false` to `headless: true`
 
-## Can I connect a custom domain to my Lovable project?
+## ⚠️ Important Notes
 
-Yes, you can!
+1. **Cookie Security:** Never commit `cookies.json` to version control
+2. **Rate Limits:** Twitter may rate limit if posting too frequently
+3. **Session Expiry:** Cookies expire; re-export if bot stops working
+4. **Legal:** Ensure compliance with Twitter's Terms of Service
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🐛 Troubleshooting
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Bot can't login:**
+- Re-export fresh cookies from logged-in browser session
+- Verify `auth_token` and `ct0` values are correct
+
+**Image download fails:**
+- Check internet connection
+- Verify nekos.best API is accessible
+
+**Selector errors:**
+- Twitter's UI may have changed
+- Update selectors in `tweet.js` by inspecting Twitter's DOM
+
+## 📝 License
+
+MIT - Use at your own risk
+
+## ⚡ Tips
+
+- Run bot on a VPS/server for 24/7 operation
+- Add `.gitignore` with `cookies.json` and `node_modules/`
+- Monitor logs to ensure posts are successful
+- Consider adding error notifications (Discord webhook, email, etc.)
+
+---
+
+**Happy posting! 🎌✨**
