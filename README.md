@@ -57,6 +57,3 @@ This project is built with:
 ## How can I deploy this project?
 
 Git Clone [Git](https://github.com/hamzaahmedshaikh/waifu-tweet-bot.git)
-
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain
