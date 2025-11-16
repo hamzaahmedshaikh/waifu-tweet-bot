@@ -56,12 +56,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/a0a42776-63d2-43e6-a5b0-5863767e7f44) and click on Share -> Publish.
+Git Clone [Git](https://github.com/hamzaahmedshaikh/waifu-tweet-bot.git)
 
-## Can I connect a custom domain to my Lovable project?
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain
