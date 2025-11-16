@@ -97,6 +97,7 @@ Edit `FLORIDA_POST_TIMES` array in `bot.js` using cron syntax.
 **To customize captions:**
 Modify the `captions` array in `generateCaption()` function.
 
+<<<<<<< HEAD
 **For headless mode (production):**
 In `tweet.js`, change `headless: false` to `headless: true`
 
@@ -135,3 +136,6 @@ MIT - Use at your own risk
 ---
 
 **Happy posting! 🎌✨**
+=======
+Git Clone [Git](https://github.com/hamzaahmedshaikh/waifu-tweet-bot.git)
+>>>>>>> 15c4bcb9dd41a8475e0332dfd16147ba9229bf86

@@ -2,7 +2,7 @@ const axios = require('axios');
 const fs = require('fs').promises;
 const path = require('path');
 const schedule = require('node-schedule');
-const { postToTwitter } = require('./tweet');
+const { postToTwitter } = require('./tweet.cjs');
 
 // Florida timezone posts: 9 times a day (every 2.5 hours from 8 AM to 10 PM)
 const FLORIDA_POST_TIMES = [
