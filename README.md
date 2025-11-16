@@ -2,17 +2,11 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/a0a42776-63d2-43e6-a5b0-5863767e7f44
+**URL**: [Link Here](https://hamzaahmedshaikh.github.io/waifu-tweet-bot/)
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/a0a42776-63d2-43e6-a5b0-5863767e7f44) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
